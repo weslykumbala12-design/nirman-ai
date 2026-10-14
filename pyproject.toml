@@ -1,0 +1,34 @@
+[project]
+name = "nirman-ai"
+version = "0.1.0"
+description = "Graph-guided, feedback-driven 3D building generation from photographs"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.111.0",
+    "uvicorn[standard]>=0.29.0",
+    "pydantic>=2.7.0",
+    "pydantic-settings>=2.3.0",
+    "motor>=3.4.0",
+    "pymongo>=4.7.0",
+    "networkx>=3.3",
+    "python-multipart>=0.0.9",
+    "httpx>=0.27.0",
+    "pillow>=10.3.0",
+    "numpy>=1.26.0",
+    "google-generativeai>=0.7.0",
+    "openai>=1.30.0",
+    "python-dotenv>=1.0.0",
+    "structlog>=24.1.0",
+    "aiofiles>=23.2.0",
+    "tenacity>=8.3.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.2.0", "pytest-asyncio>=0.23.0", "httpx>=0.27.0"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["nirman"]

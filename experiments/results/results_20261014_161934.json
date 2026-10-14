@@ -1,0 +1,356 @@
+{
+  "timestamp": "20261014_161934",
+  "building_id": "exp_building_001",
+  "runs_per_condition": 5,
+  "conditions": {
+    "baseline_full_context": {
+      "description": "All photos sent every time. No graph retrieval. No failure memory.",
+      "use_graph_retrieval": false,
+      "use_failure_memory": false,
+      "use_best_of_n": false,
+      "n_candidates": 1
+    },
+    "baseline_no_memory": {
+      "description": "Graph retrieval ON. Failure memory OFF.",
+      "use_graph_retrieval": true,
+      "use_failure_memory": false,
+      "use_best_of_n": false,
+      "n_candidates": 1
+    },
+    "ablation_memory_only": {
+      "description": "Graph retrieval OFF. Failure memory ON.",
+      "use_graph_retrieval": false,
+      "use_failure_memory": true,
+      "use_best_of_n": false,
+      "n_candidates": 1
+    },
+    "ablation_graph_only": {
+      "description": "Graph retrieval ON. Failure memory ON. Best-of-N OFF.",
+      "use_graph_retrieval": true,
+      "use_failure_memory": true,
+      "use_best_of_n": false,
+      "n_candidates": 1
+    },
+    "full_system": {
+      "description": "Graph retrieval + Failure memory + Best-of-3.",
+      "use_graph_retrieval": true,
+      "use_failure_memory": true,
+      "use_best_of_n": true,
+      "n_candidates": 3
+    }
+  },
+  "results": {
+    "baseline_full_context": [
+      {
+        "overall_score": 0.4658,
+        "traversability_score": 0.4894,
+        "doorway_clearance_score": 0.4215,
+        "staircase_score": 0.3818,
+        "mesh_score": 0.4767,
+        "tokens_used": 1883,
+        "generation_time_s": 36.54,
+        "overall": "fail"
+      },
+      {
+        "overall_score": 0.395,
+        "traversability_score": 0.4862,
+        "doorway_clearance_score": 0.3489,
+        "staircase_score": 0.3434,
+        "mesh_score": 0.5424,
+        "tokens_used": 1730,
+        "generation_time_s": 46.14,
+        "overall": "fail"
+      },
+      {
+        "overall_score": 0.4268,
+        "traversability_score": 0.3817,
+        "doorway_clearance_score": 0.4658,
+        "staircase_score": 0.4222,
+        "mesh_score": 0.4805,
+        "tokens_used": 1862,
+        "generation_time_s": 35.9,
+        "overall": "fail"
+      },
+      {
+        "overall_score": 0.461,
+        "traversability_score": 0.4784,
+        "doorway_clearance_score": 0.5241,
+        "staircase_score": 0.4888,
+        "mesh_score": 0.5822,
+        "tokens_used": 1490,
+        "generation_time_s": 73.67,
+        "overall": "fail"
+      },
+      {
+        "overall_score": 0.477,
+        "traversability_score": 0.4633,
+        "doorway_clearance_score": 0.442,
+        "staircase_score": 0.4737,
+        "mesh_score": 0.5541,
+        "tokens_used": 2038,
+        "generation_time_s": 50.75,
+        "overall": "fail"
+      }
+    ],
+    "baseline_no_memory": [
+      {
+        "overall_score": 0.5444,
+        "traversability_score": 0.5279,
+        "doorway_clearance_score": 0.5009,
+        "staircase_score": 0.5089,
+        "mesh_score": 0.6499,
+        "tokens_used": 473,
+        "generation_time_s": 15.73,
+        "overall": "fail"
+      },
+      {
+        "overall_score": 0.5164,
+        "traversability_score": 0.6065,
+        "doorway_clearance_score": 0.4766,
+        "staircase_score": 0.4543,
+        "mesh_score": 0.6436,
+        "tokens_used": 775,
+        "generation_time_s": 65.5,
+        "overall": "fail"
+      },
+      {
+        "overall_score": 0.5788,
+        "traversability_score": 0.589,
+        "doorway_clearance_score": 0.6202,
+        "staircase_score": 0.5707,
+        "mesh_score": 0.6459,
+        "tokens_used": 690,
+        "generation_time_s": 48.42,
+        "overall": "fail"
+      },
+      {
+        "overall_score": 0.5203,
+        "traversability_score": 0.5415,
+        "doorway_clearance_score": 0.6116,
+        "staircase_score": 0.4975,
+        "mesh_score": 0.5854,
+        "tokens_used": 438,
+        "generation_time_s": 46.72,
+        "overall": "fail"
+      },
+      {
+        "overall_score": 0.5816,
+        "traversability_score": 0.5824,
+        "doorway_clearance_score": 0.6767,
+        "staircase_score": 0.4994,
+        "mesh_score": 0.5953,
+        "tokens_used": 655,
+        "generation_time_s": 40.58,
+        "overall": "fail"
+      }
+    ],
+    "ablation_memory_only": [
+      {
+        "overall_score": 0.6294,
+        "traversability_score": 0.5822,
+        "doorway_clearance_score": 0.6638,
+        "staircase_score": 0.6598,
+        "mesh_score": 0.6491,
+        "tokens_used": 2096,
+        "generation_time_s": 43.78,
+        "overall": "fail"
+      },
+      {
+        "overall_score": 0.5045,
+        "traversability_score": 0.4574,
+        "doorway_clearance_score": 0.547,
+        "staircase_score": 0.5442,
+        "mesh_score": 0.5344,
+        "tokens_used": 2378,
+        "generation_time_s": 38.53,
+        "overall": "fail"
+      },
+      {
+        "overall_score": 0.5314,
+        "traversability_score": 0.6091,
+        "doorway_clearance_score": 0.5869,
+        "staircase_score": 0.4588,
+        "mesh_score": 0.6347,
+        "tokens_used": 1709,
+        "generation_time_s": 89.59,
+        "overall": "fail"
+      },
+      {
+        "overall_score": 0.537,
+        "traversability_score": 0.5912,
+        "doorway_clearance_score": 0.5193,
+        "staircase_score": 0.4378,
+        "mesh_score": 0.5811,
+        "tokens_used": 1608,
+        "generation_time_s": 26.1,
+        "overall": "fail"
+      },
+      {
+        "overall_score": 0.6052,
+        "traversability_score": 0.5912,
+        "doorway_clearance_score": 0.6618,
+        "staircase_score": 0.5379,
+        "mesh_score": 0.7474,
+        "tokens_used": 1067,
+        "generation_time_s": 24.24,
+        "overall": "fail"
+      }
+    ],
+    "ablation_graph_only": [
+      {
+        "overall_score": 0.7181,
+        "traversability_score": 0.7021,
+        "doorway_clearance_score": 0.7625,
+        "staircase_score": 0.7054,
+        "mesh_score": 0.7862,
+        "tokens_used": 365,
+        "generation_time_s": 53.97,
+        "overall": "pass"
+      },
+      {
+        "overall_score": 0.6367,
+        "traversability_score": 0.6971,
+        "doorway_clearance_score": 0.6612,
+        "staircase_score": 0.5891,
+        "mesh_score": 0.6503,
+        "tokens_used": 345,
+        "generation_time_s": 84.81,
+        "overall": "fail"
+      },
+      {
+        "overall_score": 0.5933,
+        "traversability_score": 0.6357,
+        "doorway_clearance_score": 0.5439,
+        "staircase_score": 0.6323,
+        "mesh_score": 0.6487,
+        "tokens_used": 774,
+        "generation_time_s": 75.66,
+        "overall": "fail"
+      },
+      {
+        "overall_score": 0.6501,
+        "traversability_score": 0.6392,
+        "doorway_clearance_score": 0.6162,
+        "staircase_score": 0.5581,
+        "mesh_score": 0.7467,
+        "tokens_used": 531,
+        "generation_time_s": 19.08,
+        "overall": "pass"
+      },
+      {
+        "overall_score": 0.6661,
+        "traversability_score": 0.7204,
+        "doorway_clearance_score": 0.6414,
+        "staircase_score": 0.6902,
+        "mesh_score": 0.7978,
+        "tokens_used": 899,
+        "generation_time_s": 83.39,
+        "overall": "pass"
+      }
+    ],
+    "full_system": [
+      {
+        "overall_score": 0.8253,
+        "traversability_score": 0.9175,
+        "doorway_clearance_score": 0.7912,
+        "staircase_score": 0.8698,
+        "mesh_score": 0.9662,
+        "tokens_used": 872,
+        "generation_time_s": 153.77,
+        "overall": "pass"
+      },
+      {
+        "overall_score": 0.8029,
+        "traversability_score": 0.8318,
+        "doorway_clearance_score": 0.8967,
+        "staircase_score": 0.8517,
+        "mesh_score": 0.9289,
+        "tokens_used": 933,
+        "generation_time_s": 141.11,
+        "overall": "pass"
+      },
+      {
+        "overall_score": 0.8267,
+        "traversability_score": 0.8468,
+        "doorway_clearance_score": 0.8125,
+        "staircase_score": 0.8162,
+        "mesh_score": 0.9212,
+        "tokens_used": 597,
+        "generation_time_s": 73.58,
+        "overall": "pass"
+      },
+      {
+        "overall_score": 0.8565,
+        "traversability_score": 0.8289,
+        "doorway_clearance_score": 0.8917,
+        "staircase_score": 0.8112,
+        "mesh_score": 0.9659,
+        "tokens_used": 941,
+        "generation_time_s": 266.71,
+        "overall": "pass"
+      },
+      {
+        "overall_score": 0.8181,
+        "traversability_score": 0.8434,
+        "doorway_clearance_score": 0.8268,
+        "staircase_score": 0.8152,
+        "mesh_score": 0.9664,
+        "tokens_used": 718,
+        "generation_time_s": 255.2,
+        "overall": "pass"
+      }
+    ]
+  },
+  "aggregated": {
+    "baseline_full_context": {
+      "overall_score": 0.4451,
+      "traversability_score": 0.4598,
+      "doorway_clearance_score": 0.4405,
+      "staircase_score": 0.422,
+      "mesh_score": 0.5272,
+      "tokens_used": 1800.6,
+      "generation_time_s": 48.6,
+      "pass_rate": 0.0
+    },
+    "baseline_no_memory": {
+      "overall_score": 0.5483,
+      "traversability_score": 0.5695,
+      "doorway_clearance_score": 0.5772,
+      "staircase_score": 0.5062,
+      "mesh_score": 0.624,
+      "tokens_used": 606.2,
+      "generation_time_s": 43.39,
+      "pass_rate": 0.0
+    },
+    "ablation_memory_only": {
+      "overall_score": 0.5615,
+      "traversability_score": 0.5662,
+      "doorway_clearance_score": 0.5958,
+      "staircase_score": 0.5277,
+      "mesh_score": 0.6293,
+      "tokens_used": 1771.6,
+      "generation_time_s": 44.448,
+      "pass_rate": 0.0
+    },
+    "ablation_graph_only": {
+      "overall_score": 0.6529,
+      "traversability_score": 0.6789,
+      "doorway_clearance_score": 0.645,
+      "staircase_score": 0.635,
+      "mesh_score": 0.7259,
+      "tokens_used": 582.8,
+      "generation_time_s": 63.382,
+      "pass_rate": 0.6
+    },
+    "full_system": {
+      "overall_score": 0.8259,
+      "traversability_score": 0.8537,
+      "doorway_clearance_score": 0.8438,
+      "staircase_score": 0.8328,
+      "mesh_score": 0.9497,
+      "tokens_used": 812.2,
+      "generation_time_s": 178.074,
+      "pass_rate": 1.0
+    }
+  }
+}
